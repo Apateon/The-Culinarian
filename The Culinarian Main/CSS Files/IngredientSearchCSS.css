@@ -1,0 +1,212 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900i&display=swap');
+*
+{
+  box-sizing: border-box;
+}
+.hrwithtext
+{
+	padding: 40px;
+	line-height: 1em;
+	position: relative;
+	border: 0;
+	color: black;
+	text-align: center;
+	height: 8.5em;
+}
+.hrwithtext:before
+{
+	content: '';
+	background: linear-gradient(to right, transparent, green, transparent);
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 100%;
+	height: 7px;
+}
+.hrwithtext:after
+{
+	content: attr(data);
+	position: relative;
+	display: inline-block;
+	color: black;
+	padding: 0 .5em;
+	line-height: 1.5em;
+	background-color: rgb(255,222,89);
+	font-family: 'Montserrat', sans-serif;
+	font-size: 40px;
+	letter-spacing: 6px;
+}
+.container1
+{
+  max-width: 99%;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+  user-select: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.items
+{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+h2
+{
+  position: relative;
+  margin: 0;
+  padding: 10px 0;
+  font-size: 20px;
+}
+h2::before
+{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: -20px;
+  width: 5px;
+  background-color: green;
+}
+.ingredients
+{
+  order: 3;
+}
+.mess
+{
+  font-size: 20px;
+  order: 1;
+  padding-left: 100px;
+}
+.basket
+{
+  order: 1;
+}
+.items input
+{
+  display: block;
+  height: 50px;
+  margin: 0 0 -53px -9999px;
+  order: 4;
+}
+.items input:checked
+{
+  order: 2;  
+}
+.items label
+{
+  display: block;
+  position: relative;
+  padding: 16px 0 15px 37px;
+  order: 4;
+  cursor: pointer;
+  animation: undone .5s;
+}
+label::before
+{
+  content: '\f10c';
+  font-family: FontAwesome;
+  font-size: 25px;
+  display: block;
+  position: absolute;
+  top: 11px;
+  left: 10px;
+}
+input:checked + label
+{
+  order: 2;
+  animation: done .5s;
+}
+
+input:checked + label::before
+{
+  content: '\f058';
+}
+input[type="submit"]
+{
+  background-color: green;
+  color: white;
+  order: 2;
+  margin: 10px 0 0 0;
+  height: 40px;
+  border: none;
+}
+.collapsible
+{
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.active, .collapsible:hover
+{
+  background-color: darkgreen;
+}
+.collapsible:after
+{
+  content: '\02795';
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after
+{
+  content: "\2796"; 
+}
+.comments
+{
+	border: 2px solid #CCCCCC;
+	background-color: #EEEEEE;
+	border-radius: 5px;
+	padding: 16px;
+	margin: 16px 0;
+}
+.links
+{
+	text-decoration: none;
+	color: black;
+}
+span
+{	
+	font-size: 20px;
+}
+.rate
+{
+	font-size: 50px;
+	float: right;
+}
+
+@keyframes done
+{
+  0%
+  {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  50%
+  {
+    opacity: 1;
+  }
+}
+@keyframes undone
+{
+  0%
+  {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  50%
+  {
+    opacity: 1;
+  }
+}
